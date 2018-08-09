@@ -1,6 +1,25 @@
+#
+#
+# Task Name:        Implementation of DBSCAN algorithm without using numpy
+# Author List:      Job Jacob, Paul Antony
+# File Name:        main.py
+# Functions:        main()
+# Global variables: None
+#
+#
 import dbscan
 import graphplot
 
+#
+#
+# Function Name:    main()
+# Input:            None
+# Output:           None
+# Logic:            This function acts as a controller for the whole task. This includes declaring the FileName, eps & MinPts, and also calling the 
+#                   required functions to complete the DBSCAN clustering and to plot its corresponding graph.
+# Example Call:     main()
+#
+#
 def main():
 	FileName = 'DBSCAN_data.csv'
 	eps = 5
