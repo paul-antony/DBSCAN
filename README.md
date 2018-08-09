@@ -1,5 +1,24 @@
-# DBSCAN
+# DBSCAN Clustering
 
-implement DBSCAN without using numpy
+Implementation of DBSCAN clustering on a dataset without using numpy.
 
-class DBSCAN helps create clusters and display them
+Authors: Job Jacob, Paul Antony
+
+This repo contains five file: 
+1) DBSCAN_data.csv --> The csv file containing the dataset used for clustering.
+2) main.py --> The main python file that is used for execution. It acts as a controller for the entire task and calls the required functions of the other two python files.
+3) dbscan.py --> The python file containing the functions to perform DBSCAN clustering.
+4) graphplot.py --> The python file containing the function to plot the different clusters and the noise vectors.
+5) README.md --> Contains data about the repo and the files contained in it.
+
+Steps to run the files in this repo:
+1) Download and install a Python 3.X version (https://www.python.org/downloads/)
+2) Download and install the latest version of Matplotlib (https://matplotlib.org/downloads.html)
+3) Download the files inside this repo
+4) Navigate to the directory where you downloaded the files in this repo and execute the main.py file.
+5) Enjoy the output!
+6) Feel free to edit the files and code as per your preference.
+
+GOOD LUCK!!
+
+
