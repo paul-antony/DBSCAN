@@ -11,7 +11,7 @@ This repo contains five file: <br />
 4) graphplot.py --> The python file containing the function to plot the different clusters and the noise vectors. <br />
 5) README.md --> Contains data about the repo and the files contained in it.
 
-Steps to run the files in this repo:
+Steps to run the files in this repo: <br />
 1) Download and install a Python 3.X version (https://www.python.org/downloads/). <br />
 2) Download and install the latest version of Matplotlib (https://matplotlib.org/downloads.html). <br />
 3) Download the files inside this repo. <br />
