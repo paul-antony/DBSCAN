@@ -12,18 +12,18 @@ import csv
 
 # The DBSCAN class contains all the functions required to run the DBSCAN clustering on the input dataset
 class DBSCAN:
-    #
-    #
-    # Function Name:    __init__()
-    # Input:            1) self --> the object of the class
-    #                   2) D --> the dataset
-    #                   3) eps --> the maximum distance between two data vectors for them to be neighbors
-    #                   4) MinPts --> the minimum neighbors a vector should have in order for it to be a part of the same cluster
-    # Output:           None
-    # Logic:            This function is used to initialize the DBSCAN object variables.
-    # Example Call:     DBSCAN.__init__(D, 5, 2)
-    #
-    #
+        #
+        #
+        # Function Name:    __init__()
+        # Input:            1) self --> the object of the class
+        #                   2) D --> the dataset
+        #                   3) eps --> the maximum distance between two data vectors for them to be neighbors
+        #                   4) MinPts --> the minimum neighbors a vector should have in order for it to be a part of the same cluster
+        # Output:           None
+        # Logic:            This function is used to initialize the DBSCAN object variables.
+        # Example Call:     DBSCAN.__init__(D, 5, 2)
+        #
+        #
 	def __init__(self, D, eps, MinPts):
 		self.D = D
 		self.labels = [0]*len(D)
