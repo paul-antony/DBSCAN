@@ -31,35 +31,35 @@ class DBSCAN:
 		self.eps = eps
 		self.MinPts = MinPts
 
-    #
-    #
-    # Function Name:    displayDataset()
-    # Input:            self --> the object of the class
-    # Output:           None
-    # Logic:            This function is used to display the dataset read from the csv file (stored in a list D).   
-    # Example Call:     self.displayDataset()
-    #
-    #
+        #
+        #
+        # Function Name:    displayDataset()
+        # Input:            self --> the object of the class
+        # Output:           None
+        # Logic:            This function is used to display the dataset read from the csv file (stored in a list D).   
+        # Example Call:     self.displayDataset()
+        #
+        #
 	def displayDataset(self):
 		for i in range(0, len(self.D)):
 			print (i+1, "	", self.D[i])
 		print("")
-	
-	#	
-    #
-    # Function Name:    runDBSCAN()
-    # Input:            self --> the object of the class
-    # Output:           None
-    # Logic:            This function is used to start a new cluster and call the growCluster() function to grow that particular cluster. First we check if a 
-    #                   vector in the dataset D is assigned a cluster or noise value (list labels is used to assign this value | -1 for noise and the cluster 
-    #                   number for a cluster). If yes (i.e, D's corresponding labels index value is either -1 or a cluster number), then we move to the next 
-    #                   vector. If no (i.e, D's corresponding labels index value is 0), then it means that the vector has not been evaluated. Then we check if 
-    #                   that particular vector has any neighbors. If the vector has the specified minimum neighbors, then the vector is assigned as a new cluster
-    #                   and the growCluster() function is invoked to expand the cluster even further. If the vector has less than the specified neighbors,
-    #                   then the vector is declared as a noise and we move to the next vector in the list.
-    # Example Call:     self.runDBSCAN()
-    #
-    #
+		
+    	#	
+        #
+        # Function Name:    runDBSCAN()
+        # Input:            self --> the object of the class
+        # Output:           None
+        # Logic:            This function is used to start a new cluster and call the growCluster() function to grow that particular cluster. First we check if a 
+        #                   vector in the dataset D is assigned a cluster or noise value (list labels is used to assign this value | -1 for noise and the cluster 
+        #                   number for a cluster). If yes (i.e, D's corresponding labels index value is either -1 or a cluster number), then we move to the next 
+        #                   vector. If no (i.e, D's corresponding labels index value is 0), then it means that the vector has not been evaluated. Then we check if 
+        #                   that particular vector has any neighbors. If the vector has the specified minimum neighbors, then the vector is assigned as a new cluster
+        #                   and the growCluster() function is invoked to expand the cluster even further. If the vector has less than the specified neighbors,
+        #                   then the vector is declared as a noise and we move to the next vector in the list.
+        # Example Call:     self.runDBSCAN()
+        #
+        #
 	def runDBSCAN(self):  
 		for P in range(0, len(self.D)):
 			if not (self.labels[P] == 0):
@@ -72,19 +72,19 @@ class DBSCAN:
 				self.labels[P] = self.C
 				self.growCluster(P)
     
-    #
-    #
-    # Function Name:    growCluster()
-    # Input:            1) self --> the object of the class
-    #                   2) P --> the index of the vector starting the new cluster
-    # Output:           None
-    # Logic:            This function is used to further expand a cluster created by runDBSCAN() function. It takes the neighboring vectors of a cluster
-    #                   vector and add it to a queue. These neighboring vectors are then evaluated to check if they are a part of the cluster. If yes, then
-    #                   they are added to the cluster by changing their corresponding labels index value to the cluster number. This process continues as 
-    #                   long as all the neighboring points of the cluster vectors are evaluated.
-    # Example Call:     self.growCluster(P)
-    #
-    #
+        #
+        #
+        # Function Name:    growCluster()
+        # Input:            1) self --> the object of the class
+        #                   2) P --> the index of the vector starting the new cluster
+        # Output:           None
+        # Logic:            This function is used to further expand a cluster created by runDBSCAN() function. It takes the neighboring vectors of a cluster
+        #                   vector and add it to a queue. These neighboring vectors are then evaluated to check if they are a part of the cluster. If yes, then
+        #                   they are added to the cluster by changing their corresponding labels index value to the cluster number. This process continues as 
+        #                   long as all the neighboring points of the cluster vectors are evaluated.
+        # Example Call:     self.growCluster(P)
+        #
+        #
 	def growCluster(self, P):
 		SearchQueue = [P]
 		i = 0
@@ -102,16 +102,16 @@ class DBSCAN:
 					SearchQueue.append(Pn)
 			i += 1        
     
-    #
-    #
-    # Function Name:    regionQuery()
-    # Input:            1) self --> the object of the class
-    #                   2) P --> the index of the vector that requires evaluation
-    # Output:           neighbors --> the list of neighbors of the given vector
-    # Logic:            This function is used to find the neighboring points (vectors) of a given vector.   
-    # Example Call:     self.regionQuery(P)
-    #
-    #
+        #
+        #
+        # Function Name:    regionQuery()
+        # Input:            1) self --> the object of the class
+        #                   2) P --> the index of the vector that requires evaluation
+        # Output:           neighbors --> the list of neighbors of the given vector
+        # Logic:            This function is used to find the neighboring points (vectors) of a given vector.   
+        # Example Call:     self.regionQuery(P)
+        #
+        #
 	def regionQuery(self, P):
 		neighbors = []
 		for Pn in range(0, len(self.D)):
@@ -119,17 +119,17 @@ class DBSCAN:
 				neighbors.append(Pn) 
 		return neighbors
 
-    #
-    #
-    # Function Name:    EuclideanDistance()
-    # Input:            1) self --> the object of the class
-    #                   2) pt1 --> the first vector
-    #                   3) pt2 --> the second vector
-    # Output:           distance --> the distance between the two vectors
-    # Logic:            This function is used to find the distance between two vectors.   
-    # Example Call:     self.EuclideanDistance(self.D[P], self.D[Pn])
-    #
-    #
+        #
+        #
+        # Function Name:    EuclideanDistance()
+        # Input:            1) self --> the object of the class
+        #                   2) pt1 --> the first vector
+        #                   3) pt2 --> the second vector
+        # Output:           distance --> the distance between the two vectors
+        # Logic:            This function is used to find the distance between two vectors.   
+        # Example Call:     self.EuclideanDistance(self.D[P], self.D[Pn])
+        #
+        #
 	def EuclideanDistance(self, pt1, pt2):
 		sum = 0
 		distance = 0
@@ -138,15 +138,15 @@ class DBSCAN:
 		distance = sum**(1/2)
 		return distance
     
-    #
-    #
-    # Function Name:    createClusterList()
-    # Input:            self --> the object of the class
-    # Output:           ClusterList --> a 2D list with the different clusters and their corresponding vector elements 
-    # Logic:            This function is used to create a 2D list with the different clusters and their corresponding vector elements.
-    # Example Call:     self.createClusterList()
-    #
-    #
+        #
+        #
+        # Function Name:    createClusterList()
+        # Input:            self --> the object of the class
+        # Output:           ClusterList --> a 2D list with the different clusters and their corresponding vector elements 
+        # Logic:            This function is used to create a 2D list with the different clusters and their corresponding vector elements.
+        # Example Call:     self.createClusterList()
+        #
+        #
 	def createClusterList(self):
 		ClusterList = []
 		for i in range(0, self.C):
@@ -157,15 +157,15 @@ class DBSCAN:
 			ClusterList.append(cluster)
 		return ClusterList
 
-    #
-    #
-    # Function Name:    createNoiseList()
-    # Input:            self --> the object of the class
-    # Output:           NoiseList --> a list containing all the noise vectors obtained after the clustering 
-    # Logic:            This function is used to create a list containing all the noise vectors obtained after the clustering.
-    # Example Call:     self.createNoiseList()
-    #
-    #
+        #
+        #
+        # Function Name:    createNoiseList()
+        # Input:            self --> the object of the class
+        # Output:           NoiseList --> a list containing all the noise vectors obtained after the clustering 
+        # Logic:            This function is used to create a list containing all the noise vectors obtained after the clustering.
+        # Example Call:     self.createNoiseList()
+        #
+        #
 	def createNoiseList(self):
 		NoiseList = []
 		for i in range(0, len(self.labels)):
@@ -173,15 +173,15 @@ class DBSCAN:
 				NoiseList.append(self.D[i])
 		return NoiseList
 
-    #
-    #
-    # Function Name:    displayClusters()
-    # Input:            self --> the object of the class
-    # Output:           None
-    # Logic:            This function is used to display all the clusters and their vector elements.
-    # Example Call:     self.displayClusters()
-    #
-    #
+        #
+        #
+        # Function Name:    displayClusters()
+        # Input:            self --> the object of the class
+        # Output:           None
+        # Logic:            This function is used to display all the clusters and their vector elements.
+        # Example Call:     self.displayClusters()
+        #
+        #
 	def displayClusters(self):
 		ClusterList = self.createClusterList()
 		for cluster in ClusterList:
@@ -190,15 +190,15 @@ class DBSCAN:
 				print(item)
 			print("")
 
-    #
-    #
-    # Function Name:    displayNoise()
-    # Input:            self --> the object of the class
-    # Output:           None
-    # Logic:            This function is used to display all the noise vectors.
-    # Example Call:     self.displayNoise()
-    #
-    #
+        #
+        #
+        # Function Name:    displayNoise()
+        # Input:            self --> the object of the class
+        # Output:           None
+        # Logic:            This function is used to display all the noise vectors.
+        # Example Call:     self.displayNoise()
+        #
+        #
 	def displayNoise(self):
 		NoiseList = self.createNoiseList()
 		for noise in NoiseList:
