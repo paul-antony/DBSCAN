@@ -9,7 +9,7 @@ This repo contains seven files: <br />
 2) main.py --> The main python file that is used for execution. It acts as a controller for the entire task and calls the required functions of the other two python files. <br />
 3) dbscan.py --> The python file containing the functions to perform DBSCAN clustering. <br />
 4) graphplot.py --> The python file containing the function to plot the different clusters and the noise vectors. <br />
-5) DBSCAN_ppt.pdf --> A PPT file explaining the DBSCAN algorithm. <br />
+5) DBSCAN_ppt.pdf --> A presentation file explaining the DBSCAN algorithm. <br />
 6) dbscan-images --> Folder containing screenshots of our output for the dataset in the DBSCAN_data.csv file. <br />
 7) README.md --> Contains data about the repo and the files contained in it.
 
